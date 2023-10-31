@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>导航网站</title>
+  <style>
+    .site-group {
+      margin-bottom: 20px;
+      font-family: Inter, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    }
+
+    .site-group .title {
+      font-size: 24px;
+    }
+
+    .site-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 10px;
+    }
+
+    .site {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      transition: box-shadow 0.3s;
+      cursor: pointer;
+      display: flex;
+    }
+
+    .site:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .site-icon {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    .site-icon img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .site-details {
+      flex: 1;
+      margin-left: 10px;
+      max-width: 180px;
+    }
+
+    .site-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .site-description {
+      margin-top: 12px;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    footer {
+      padding: 20px 0;
+      text-align: left;
+      width: 100%;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #586069;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #111;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* 暗色模式 */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #ffffff;
+      }
+
+      .site {
+        background-color: #1f1f1f;
+        border: 1px solid #343434;
+      }
+
+      .site:hover {
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+      }
+
+      .site-name {
+        color: #ffffff;
+      }
+
+      .site-description {
+        color: #b0b0b0;
+      }
+
+      footer a {
+        color: #ccc;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="web-content">
+    <div id="navigation">
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 &nbsp;<a href="https://github.com/BaoXuebin/xdbin-nav" target="_blank">GitHub</a></p>
+  </footer>
+
+  <script>
+    // 使用JavaScript加载data.json文件并动态生成网站导航
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        const navigation = document.getElementById('navigation');
+        data.forEach(group => {
+          const groupElement = document.createElement('div');
+          groupElement.className = 'site-group';
+
+          const groupTitle = document.createElement('p');
+          groupTitle.textContent = group.title;
+          groupTitle.className = 'title'
+          groupElement.appendChild(groupTitle);
+
+          const siteContainer = document.createElement('div');
+          siteContainer.className = 'site-container';
+
+          group.sites.forEach(site => {
+            const siteElement = document.createElement('div');
+            siteElement.className = 'site';
+
+            const siteIcon = document.createElement('div');
+            siteIcon.className = 'site-icon';
+            const siteIconImage = document.createElement('img');
+            siteIconImage.src = site.icon;
+            siteIcon.appendChild(siteIconImage);
+            siteElement.appendChild(siteIcon);
+
+            const siteDetails = document.createElement('div');
+            siteDetails.className = 'site-details';
+
+            const siteName = document.createElement('div');
+            siteName.className = 'site-name';
+            siteName.textContent = site.name;
+            siteDetails.appendChild(siteName);
+
+            const siteDescription = document.createElement('div');
+            siteDescription.className = 'site-description';
+            siteDescription.textContent = site.description;
+            siteDetails.appendChild(siteDescription);
+
+            siteElement.appendChild(siteDetails);
+            siteContainer.appendChild(siteElement);
+
+            // 添加点击事件，打开链接
+            siteElement.addEventListener('click', () => {
+              window.open(site.link, '_blank');
+            });
+          });
+
+          groupElement.appendChild(siteContainer);
+          navigation.appendChild(groupElement);
+        });
+      })
+      .catch(error => console.error('无法加载数据文件', error));
+  </script>
+</body>
+
+</html>

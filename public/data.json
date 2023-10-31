@@ -1,0 +1,95 @@
+[
+  {
+    "title": "💻 开发编程",
+    "sites": [
+      {
+        "name": "🐙 GitHub",
+        "link": "https://github.com",
+        "icon": "./icons/github.svg",
+        "description": "🚀 全球领先的代码托管平台"
+      },
+      {
+        "name": "📚 Stack Overflow",
+        "link": "https://stackoverflow.com",
+        "icon": "./icons/stackoverflow.svg",
+        "description": "💬 程序员问答社区"
+      },
+      {
+        "name": "📝 Visual Studio Code",
+        "link": "https://code.visualstudio.com",
+        "icon": "./icons/vscode.svg",
+        "description": "💻 强大的代码编辑器"
+      },
+      {
+        "name": "🔧 GitLab",
+        "link": "https://gitlab.com",
+        "icon": "./icons/gitlab.svg",
+        "description": "自动化 DevOps 平台 🚀"
+      },
+      {
+        "name": "📦 npm",
+        "link": "https://www.npmjs.com",
+        "icon": "./icons/npm.svg",
+        "description": "Node.js 软件包管理器 📁"
+      }
+    ]
+  },
+  {
+    "title": "📚 学习网站",
+    "sites": [
+      {
+        "name": "🎓 Coursera",
+        "link": "https://www.coursera.org",
+        "icon": "./icons/coursera.svg",
+        "description": "📖 在线课程平台"
+      },
+      {
+        "name": "🌍 Duolingo",
+        "link": "https://www.duolingo.com",
+        "icon": "./icons/duolingo.svg",
+        "description": "免费学习新语言"
+      },
+      {
+        "name": "📕 Khan Academy",
+        "link": "https://www.khanacademy.org",
+        "icon": "./icons/khanacademy.svg",
+        "description": "🎯 免费教育资源"
+      },
+      {
+        "name": "🔬 edX",
+        "link": "https://www.edx.org",
+        "icon": "./icons/edx.svg",
+        "description": "🎓 在线学位和课程"
+      },
+      {
+        "name": "💡 TED",
+        "link": "https://www.ted.com",
+        "icon": "./icons/ted.svg",
+        "description": "🎙 思想和灵感的传播"
+      }
+    ]
+  },
+  {
+    "title": "🎨 创意设计",
+    "sites": [
+      {
+        "name": "🎨 Behance",
+        "link": "https://www.behance.net",
+        "icon": "./icons/behance.svg",
+        "description": "创意作品和设计资源 🖼"
+      },
+      {
+        "name": "📐 Dribbble",
+        "link": "https://dribbble.com",
+        "icon": "./icons/dribbble.svg",
+        "description": "设计师社交网络 🏀"
+      },
+      {
+        "name": "✏️ Adobe Creative Cloud",
+        "link": "https://www.adobe.com/creativecloud.html",
+        "icon": "./icons/adobe.svg",
+        "description": "Adobe 创意云服务和应用 🎬"
+      }
+    ]
+  }
+]
