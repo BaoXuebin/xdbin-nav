@@ -1,14 +1,16 @@
 {
   "name": "xdbin-nav",
   "version": "1.0.0",
-  "description": "",
+  "description": "轻量级的导航应用，Lightweight Navigation Application.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "BaoXuebin",
+  "homepage": "https://nav.xdbin.com",
+  "github": "https://github.com/BaoXuebin/xdbin-nav",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2"
   }
