@@ -6,5 +6,5 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./public:/usr/share/nginx/html
+      - ~/xdbin-nav:/usr/share/nginx/html
     container_name: xdbin-nav
